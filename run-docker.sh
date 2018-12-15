@@ -67,7 +67,7 @@ do
     sudo docker run -d -it --name ${name}-agent \
         -e SERVER_URL="<host_ip>:8840" \
         -e AGENT_NAME=${name} \
-        -v ~/${base}/${inst}/conf:/data/${inst}_agent/conf \
+        -v ~/${base}/${inst}/${name}_conf:/data/${inst}_agent/conf \
         ${base}/${inst}-agent
 done
 
