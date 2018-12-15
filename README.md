@@ -3,7 +3,16 @@ DevOps
 Скрипты для автоматического развертывания бесплатных версий Hub YouTrack Upsource TeamCity+3 Build Агента в докер контейнерах
 Так же в сборку влючен portainer для управления контейнерами.
 
-*Запуск*
+***ВАЖНО***
+в файле run-docker.sh
+```ssh
+68:        -e SERVER_URL="<host_ip>:8840" \
+```
+указать url/ip хост машины
+
+
+**Запуск**
+
 из папки с Vagrantfile
 ```ssh
 vagtant up
@@ -37,4 +46,13 @@ f916dcaec23a  <==   portainer/portainer               "/portainer"          Abou
 1fe990ea985d        jetbrains/youtrack:2018.3.47965   "/bin/bash /run.sh"   About an hour ago   Up About an hour    0.0.0.0:8082->8080/tcp   youtrack-server
 608caf376e07        jetbrains/hub:2018.3.11035        "/bin/bash /run.sh"   About an hour ago   Up About an hour    0.0.0.0:8081->8080/tcp   hub-server
 [vagrant@jb ~]$ sudo docker start f91
+```
+
+доступ к приложениям:
+```ssh
+<host_ip>:8810 - Hub
+<host_ip>:8820 - Youtrack
+<host_ip>:8830 - Upsource
+<host_ip>:8840 - Teamcity
+<host_ip>:8890 - Portainer
 ```
