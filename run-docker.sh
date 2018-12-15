@@ -10,7 +10,7 @@ teamcity_port=$4
 portainer_port=$4
 base="jetbrains"
 jb_products=(hub youtrack upsource)
-ts_agents=(test dev deploy)
+ts_agents=(test dev prod)
 
 sudo rm -f /etc/pacman.d/mirrorlist 
 
