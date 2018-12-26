@@ -78,7 +78,7 @@ sudo docker run -d -it --name portainer-server \
 -p ${portainer_port}:9000 \
 portainer/portainer
 
-echo "======== Hub token ========="
+echo "======== Hub token ========= "
 echo "=== $(cat ./hub_token) ==="
 echo "============================"
 echo " "
